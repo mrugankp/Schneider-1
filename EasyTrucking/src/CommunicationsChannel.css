@@ -1,0 +1,56 @@
+.statistics-container {
+    color: white;
+    background-color: black;
+    font-family: 'Arial', sans-serif;
+    padding: 1rem;
+  }
+  
+  .statistics-header h1, .statistics-header p, .achievements-section h2 {
+    text-align: center;
+  }
+  
+  .statistics-section, .achievements-section {
+    margin-top: 2rem;
+  }
+  
+  .statistics-item, .achievement {
+    background-color: #333;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 0.25rem;
+  }
+  
+  .statistics-info, .achievement-progress {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .statistics-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .statistics-text, .achievement-description, .achievement-status {
+    font-size: 0.9rem;
+  }
+  
+  .achievement-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .achievement-progress {
+    background-color: #222;
+    position: relative;
+    height: 20px;
+    border-radius: 10px;
+    width: 100%;
+  }
+  
+  .achievement .progress-bar {
+    background-color: limegreen;
+    height: 100%;
+    border-radius: 10px;
+  }
+  
