@@ -1,13 +1,17 @@
 import React from 'react';
 import './LoginPage.css'; // make sure to include the CSS file
-import SearchIcon from '@mui/icons-material/Search';
+import { useNavigate } from 'react-router-dom';
 
-const LoginPage = ({ onJoinNowClick }) => {
+
+const LoginPage = () => {
+    const navigate = useNavigate();
+
     const handleSubmit = (event) => {
-        event.preventDefault(); // Prevent form submission to server
-        onJoinNowClick(); // Call the function passed down from App
-      };
-  return (
+        event.preventDefault();
+        navigate('/truckconnect'); // Directly navigate to the TruckConnect route
+    };
+
+    return (
     <div className="login-container">
       <div className="login-logo">
         {/* Include your logo here */}

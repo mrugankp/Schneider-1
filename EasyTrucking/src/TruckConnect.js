@@ -1,7 +1,18 @@
 import React from 'react';
 import './TruckConnect.css';
+import { useNavigate } from 'react-router-dom';
 
 const TruckConnect = () => {
+  let navigate = useNavigate();
+
+  const handleCommunicationsClick = () => {
+    navigate('/communications'); // Navigate to CommunicationsPage
+  };
+
+  const handleDrivingModeClick = () => {
+    navigate('/driving-mode'); 
+  };
+
   return (
     <div className="truck-connect-container">
       <header className="truck-connect-header">
@@ -10,8 +21,8 @@ const TruckConnect = () => {
           <input type="text" placeholder="Search..." />
         </div>
         <div className="header-buttons">
-          <button className="header-btn">Driving Mode</button>
-          <button className="header-btn">Communication</button>
+        <button onClick={handleDrivingModeClick} className="header-btn">Driving Mode</button>
+          <button className="header-btn" onClick={handleCommunicationsClick}>Communication</button>
         </div>
       </header>
 
