@@ -1,0 +1,170 @@
+.truck-connect-container {
+  color: #FFFFFF;
+  background: #121212; /* Dark theme for contrast */
+  font-family: 'Roboto', sans-serif; /* Modern, clean font choice */
+  padding: 2rem;
+  max-width: 100%;
+  margin: auto;
+}
+
+.truck-connect-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.truck-connect-header h1 {
+  color: #E0E0E0; /* Slightly off-white for softer text */
+  font-size: 3rem; /* Larger for emphasis */
+  margin-bottom: 1rem;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.search-container {
+  position: relative;
+  width: 50%; /* Adjust if you want a different width for the search bar */
+  margin: 0 auto; /* Center the search container */
+}
+
+.search-container input {
+  width: 100%; /* The input will take up the full width of its container */
+  padding: 1rem;
+  padding-right: 3rem; /* Add padding to the right to make space for the search icon */
+  background-color: #333;
+  border: 1px solid #444; /* A subtle border, can adjust the color as needed */
+  border-radius: 20px; /* Rounded corners */
+  color: white;
+  font-size: 1rem;
+}
+
+.search-btn {
+  position: absolute;
+  right: -20rem; 
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.header-buttons {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.header-btn {
+  background: linear-gradient(145deg, #2d2d2d, #3a3a3a); /* Subtle gradient for depth */
+  color: #FFFFFF;
+  border: none;
+  border-radius: 1rem;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  font-weight: 600; /* Bolder font for button text */
+  text-transform: uppercase;
+  transition: transform 0.1s ease-in-out;
+}
+
+.header-btn:hover,
+.header-btn:focus {
+  transform: translateY(-3px); /* Raise the button on hover/focus */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.communication-btn.active {
+  background: #FF4500; /* Bright color for active state */
+}
+
+.main-content > section {
+  background-color: rgba(34, 34, 34, 0.85); /* Translucent background for layers */
+  padding: 2rem;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* More pronounced shadow for 3D effect */
+  backdrop-filter: blur(5px); /* Blur effect for see-through sections */
+}
+
+.notifications .notification-card {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 1rem;
+  background: rgba(51, 51, 51, 0.8); /* Subtle background for notification card */
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  margin-bottom: 1rem;
+}
+
+.notification-content h3 {
+  font-size: 1.5rem;
+  color: #FFA500; /* Highlight color for titles */
+}
+
+.notification-content p {
+  color: #CCCCCC;
+  line-height: 1.5; /* Increased line height for readability */
+}
+
+.see-all-btn {
+  background: none;
+  color: #FFD700; /* Gold color for buttons */
+  padding: 0.5rem 1rem;
+  border: 1px solid #FFD700; /* Border to match the text color */
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.see-all-btn:hover {
+  background: #FFD700;
+  color: #000;
+}
+
+.insight-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.insight-card {
+  background: rgba(51, 51, 51, 0.8);
+  border-radius: 1rem;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  transition: all 0.2s ease-in-out;
+}
+
+.insight-card:hover {
+  transform: scale(1.03); /* Slight scale effect on hover */
+}
+
+.insight-icon {
+  margin-right: 1rem;
+  color: #BBBBBB; /* Light grey for icons */
+  transition: transform 0.2s ease-in-out;
+}
+
+.insight-info p {
+  font-size: 1rem;
+  color: #DDDDDD; /* Light grey for text */
+}
+
+.select-btn {
+  background: #333;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 0.75rem;
+  padding: 0.5rem 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.select-btn:hover {
+  background: #444;
+}
