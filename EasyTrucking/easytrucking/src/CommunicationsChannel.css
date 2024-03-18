@@ -1,56 +1,142 @@
-.statistics-container {
-    color: white;
-    background-color: black;
-    font-family: 'Arial', sans-serif;
-    padding: 1rem;
-  }
-  
-  .statistics-header h1, .statistics-header p, .achievements-section h2 {
-    text-align: center;
-  }
-  
-  .statistics-section, .achievements-section {
-    margin-top: 2rem;
-  }
-  
-  .statistics-item, .achievement {
-    background-color: #333;
-    margin-bottom: 1rem;
-    padding: 1rem;
-    border-radius: 0.25rem;
-  }
-  
-  .statistics-info, .achievement-progress {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .statistics-number {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  
-  .statistics-text, .achievement-description, .achievement-status {
-    font-size: 0.9rem;
-  }
-  
-  .achievement-title {
-    font-size: 1.2rem;
-    font-weight: bold;
-  }
-  
-  .achievement-progress {
-    background-color: #222;
-    position: relative;
-    height: 20px;
-    border-radius: 10px;
-    width: 100%;
-  }
-  
-  .achievement .progress-bar {
-    background-color: limegreen;
-    height: 100%;
-    border-radius: 10px;
-  }
-  
+.communications-container {
+  font-family: 'Arial', sans-serif;
+  background-color: #1e1e1e;
+  color: white;
+  padding: 20px;
+  max-width: 500px;
+  margin: auto;
+  height: 100vh; /* Full height of the viewport */
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.communications-header h1, .communications-header h2 {
+  text-align: center;
+  margin: 0;
+}
+
+.communications-header h2 {
+  font-size: 1.5em;
+  margin-bottom: 20px; /* Spacing between title and search */
+}
+
+.communications-search {
+  padding: 8px;
+  border: none;
+  border-radius: 20px;
+  width: 100%; /* Full width of the container */
+  box-sizing: border-box; /* Include padding in width */
+  margin-bottom: 20px; /* Spacing between search and stories */
+}
+
+.communications-stories {
+  display: flex;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  padding-bottom: 10px; /* Spacing between stories and messages */
+  margin-bottom: 20px; /* Spacing between stories and messages */
+}
+
+.story-picture {
+  width: 40px; /* Set the image size */
+  height: 40px; /* Set the image size */
+  border-radius: 50%; /* Circular image */
+  object-fit: cover; /* Keep aspect ratio within the circle */
+  margin-right: 10px; /* Spacing between image and text */
+  border: 2px solid #fff; /* Optional: if you want a border around the image */
+}
+
+.story {
+  display: flex;
+  align-items: center;
+  text-align: left; /* Align text to the left */
+  border-radius: 10px;
+  padding: 10px;
+  margin-right: 10px; /* Spacing between stories */
+  background: #333;
+  flex: 0 0 auto; /* Don't grow, don't shrink, base on width auto */
+}
+
+.communications-messages {
+  flex-grow: 1; /* Grow to take remaining space */
+  overflow-y: auto; /* Enable vertical scrolling */
+  padding: 10px;
+  border-radius: 10px;
+  background: #252525;
+}
+
+.message {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #333;
+}
+
+.message-info {
+  max-width: 70%;
+}
+
+.message-status {
+  font-size: 0.9em;
+  color: #888;
+}
+
+.call-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+}
+
+.call-button:hover {
+  background-color: #45a049;
+}
+
+.communications-new-message {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000; /* Ensure it's above other elements */
+}
+
+.new-message-button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  font-size: 2em;
+  background-color: #4caf50;
+  color: white;
+  line-height: 1; /* Align '+' sign vertically */
+  text-align: center;
+  cursor: pointer;
+}
+
+.new-message-button:hover {
+  background-color: #45a049;
+}
+
+/* Additional global styles */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #121212;
+}
+
+/* Fix for scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
