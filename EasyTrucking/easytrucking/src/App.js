@@ -3,7 +3,7 @@ import LoginPage from './LoginPage';
 import TruckConnect from './TruckConnect';
 import CommunicationsChannel from './CommunicationsChannel'; 
 import StartScreen from './StartScreen';
-import DrivingMode from './DrivingMode';
+import StatsBoard from './statsBoard';
 import { BrowserRouter, Routes, Route, Navigate  } from 'react-router-dom';
 
 const App = () => {
@@ -13,8 +13,8 @@ const App = () => {
         <Route path="/" element={<StartScreen />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/truckconnect" element={<TruckConnect />} />
-        <Route path="/driving-mode" element={<DrivingMode />} />
         <Route path="/communications" element={<CommunicationsChannel />} />
+        <Route path="/stats" element={<StatsBoard />} />
       </Routes>
     </BrowserRouter>
   );

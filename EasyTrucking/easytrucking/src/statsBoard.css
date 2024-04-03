@@ -1,0 +1,76 @@
+/* Base styling to match other pages */
+.stats-dashboard {
+  background-color: #1e1e1e; /* Adjust to match your theme color */
+  color: #ffffff;
+  font-family: 'Arial', sans-serif; /* Use the same font family as other pages */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  padding: 50px;
+  max-width: 800px; /* Or whatever width matches your design */
+  margin: 20px auto; /* Centers the dashboard */
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px; /* Space before the next section */
+}
+
+.score-section {
+  background-color: #4CAF50; /* Adjust if you have a different accent color */
+  border-radius: 50px; /* Pill shape */
+  padding: 15px 20px;
+  display: inline-block;
+  font-weight: bold; /* If other headers are bold */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.score-value {
+  color: #ffffff;
+  margin-left: 10px;
+}
+
+.stats-summary {
+  background-color: #262626; /* Slightly lighter than the main bg for contrast */
+  border-radius: 8px;
+  padding: 25px;
+  margin-bottom: 50px; /* Space before the next section */
+}
+
+.metrics-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 50px; /* Space before the next section */
+}
+
+.metrics-table td, 
+.metrics-table th {
+  border: 1px solid #ffffff; /* or a softer color for less contrast */
+  padding: 17px;
+  text-align: left;
+}
+
+.metrics-table th {
+  background-color: #333333; /* Or your theme's header color */
+}
+
+.dashboard-footer {
+  text-align: center;
+}
+
+.dashboard-footer button {
+  background-color: #4CAF50; /* Or your theme's primary button color */
+  color: #ffffff;
+  border: none;
+  border-radius: 25px; /* Rounded button */
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s;
+}
+
+.dashboard-footer button:hover {
+  background-color: #367c39; /* Darken on hover */
+}

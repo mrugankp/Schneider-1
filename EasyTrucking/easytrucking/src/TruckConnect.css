@@ -1,170 +1,189 @@
-.truck-connect-container {
-  color: #FFFFFF;
-  background: #121212; /* Dark theme for contrast */
-  font-family: 'Roboto', sans-serif; /* Modern, clean font choice */
-  padding: 2rem;
-  max-width: 100%;
-  margin: auto;
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
-.truck-connect-header {
+.dashboard-container {
+  font-family: 'Roboto', sans-serif;
+  background: #333; /* A deep grey that sets a professional tone */
+  color: #ffffff;
+  padding: 20px;
+  max-width: 500px;
+  margin: auto; /* Give some space at the top and bottom */
+  height: 100vh; /* Adjust height considering the margin */
+  display: flex;
+  flex-direction: column;
   text-align: center;
-  margin-bottom: 2rem;
 }
 
-.truck-connect-header h1 {
-  color: #E0E0E0; /* Slightly off-white for softer text */
-  font-size: 3rem; /* Larger for emphasis */
-  margin-bottom: 1rem;
-}
-
-.search-container {
+.button-container {
   display: flex;
   justify-content: center;
-  margin-bottom: 2rem;
+  gap: 20px; /* Add space between buttons */
+  margin-bottom: 20px; /* Space below the button container */
 }
 
-.search-container {
-  position: relative;
-  width: 50%; /* Adjust if you want a different width for the search bar */
-  margin: 0 auto; /* Center the search container */
-}
-
-.search-container input {
-  width: 100%; /* The input will take up the full width of its container */
-  padding: 1rem;
-  padding-right: 3rem; /* Add padding to the right to make space for the search icon */
-  background-color: #333;
-  border: 1px solid #444; /* A subtle border, can adjust the color as needed */
-  border-radius: 20px; /* Rounded corners */
+.circle-button {
+  background-color: #686c69; /* Example color, adjust as needed */
   color: white;
-  font-size: 1rem;
-}
-
-.search-btn {
-  position: absolute;
-  right: -20rem; 
-  top: 50%;
-  transform: translateY(-50%);
-  background: transparent;
   border: none;
-  color: white;
-  cursor: pointer;
-}
-
-.header-buttons {
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.header-btn {
-  background: linear-gradient(145deg, #2d2d2d, #3a3a3a); /* Subtle gradient for depth */
-  color: #FFFFFF;
-  border: none;
-  border-radius: 1rem;
-  padding: 1rem 2rem;
-  cursor: pointer;
-  font-weight: 600; /* Bolder font for button text */
-  text-transform: uppercase;
-  transition: transform 0.1s ease-in-out;
-}
-
-.header-btn:hover,
-.header-btn:focus {
-  transform: translateY(-3px); /* Raise the button on hover/focus */
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-.communication-btn.active {
-  background: #FF4500; /* Bright color for active state */
-}
-
-.main-content > section {
-  background-color: rgba(34, 34, 34, 0.85); /* Translucent background for layers */
-  padding: 2rem;
-  border-radius: 1rem;
-  margin-bottom: 2rem;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* More pronounced shadow for 3D effect */
-  backdrop-filter: blur(5px); /* Blur effect for see-through sections */
-}
-
-.notifications .notification-card {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  padding: 1rem;
-  background: rgba(51, 51, 51, 0.8); /* Subtle background for notification card */
-  border-radius: 0.75rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-  margin-bottom: 1rem;
-}
-
-.notification-content h3 {
-  font-size: 1.5rem;
-  color: #FFA500; /* Highlight color for titles */
-}
-
-.notification-content p {
-  color: #CCCCCC;
-  line-height: 1.5; /* Increased line height for readability */
-}
-
-.see-all-btn {
-  background: none;
-  color: #FFD700; /* Gold color for buttons */
-  padding: 0.5rem 1rem;
-  border: 1px solid #FFD700; /* Border to match the text color */
-  border-radius: 1rem;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-}
-
-.see-all-btn:hover {
-  background: #FFD700;
-  color: #000;
-}
-
-.insight-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-}
-
-.insight-card {
-  background: rgba(51, 51, 51, 0.8);
-  border-radius: 1rem;
-  padding: 1rem;
+  border-radius: 50%; /* Makes the button circular */
+  width: 100px; /* Circle size */
+  height: 100px; /* Circle size */
   display: flex;
   align-items: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-  transition: all 0.2s ease-in-out;
-}
-
-.insight-card:hover {
-  transform: scale(1.03); /* Slight scale effect on hover */
-}
-
-.insight-icon {
-  margin-right: 1rem;
-  color: #BBBBBB; /* Light grey for icons */
-  transition: transform 0.2s ease-in-out;
-}
-
-.insight-info p {
-  font-size: 1rem;
-  color: #DDDDDD; /* Light grey for text */
-}
-
-.select-btn {
-  background: #333;
-  color: #FFFFFF;
-  border: none;
-  border-radius: 0.75rem;
-  padding: 0.5rem 1.5rem;
+  justify-content: center;
+  font-size: 0.8em; /* Adjust font size as needed */
   cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional: Adds a shadow for depth */
 }
 
-.select-btn:hover {
-  background: #444;
+.circle-button:focus,
+.circle-button:hover {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
+}
+
+.carplay-btn, .stat, .speed-bar, .timeline-container {
+  background: linear-gradient(145deg, #232528, #1b1d21); /* A subtle gradient for depth */
+  color: #CDD1D4; /* Light grey for text that's easy on the eyes */
+  border-radius: 15px;
+  margin: 15px 0;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); /* Soft shadow for elevation */
+}
+
+.carplay-btn {
+  font-weight: 700; /* Bolder text for better readability */
+  transition: background 0.3s, transform 0.1s; /* Smooth background fade and press animation */
+}
+
+.carplay-btn:hover {
+  background: linear-gradient(145deg, #2e3136, #252729); /* Lighter gradient for hover state */
+}
+
+.carplay-btn:active {
+  transform: scale(0.98); /* Slight scale down to mimic button press */
+}
+
+.speed-bar {
+  background-color: #333; /* Dark background for the unfilled part of the speed bar */
+  border-radius: 15px; /* Uniform rounded corners for the bar */
+  overflow: hidden;
+  height: 30px;
+  width: 90%;
+  /* Add additional styling as needed */
+}
+
+.speed-indicator {
+  height: 100%;
+  color: black; /* Color for the speed text */
+  border-radius: 15px; /* Uniform rounded corners for the indicator */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: width 0.5s ease, background-color 0.5s ease; /* Smooth transition for changes */
+  /* Remove the background-color here since it's set dynamically in React */
+}
+
+.timeline-container {
+  position: relative;
+  width: 90%;
+  margin: 20px auto 40px;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(5, 10fr); /* creates five columns with equal width */
+  background-color: #333;
+  height: 200px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.timeline-segment {
+  border: 2px solid yellow; /* Just for testing */
+}
+
+.timeline-segment.driving {
+  background-color: #4CAF50;
+  grid-column: span 2; /* driving segments take up two parts */
+}
+
+.timeline-segment.break {
+  background-color: #F44336;
+  grid-column: span 1; /* break segments take up one part */
+}
+
+.timeline-labels {
+  position: absolute;
+  bottom: -40px; /* Lower the labels below the timeline */
+  left: 0; /* Align with the left edge of the timeline */
+  width: 100%; /* Match width with the timeline */
+  display: flex;
+  justify-content: space-between; /* Even spacing for labels */
+}
+
+.timeline-label {
+  position: absolute;
+  color: white;
+  background-color: #222; /* Make labels visible */
+  padding: 5px 10px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* Calculate left offset based on segment width and adjust translateX accordingly */
+.timeline-label.start {
+  left: 0; /* No need to translate */
+}
+
+.timeline-label.middle {
+  left: 50%; /* Offset to the middle */
+  transform: translateX(-50%);
+}
+
+.timeline-label.end {
+  right: 0; /* Align to the right edge */
+  left: auto; /* Override left value */
+  transform: translateX(-50%);
+}
+
+@media (max-width: 500px) {
+  .dashboard-container {
+    padding: 15px;
+    margin: 15px;
+    height: calc(100vh - 30px); /* Adjust height considering the smaller margin */
+    border-radius: 20px; /* Adjust for smaller screens */
+  }
+
+  .carplay-btn, .stat, .speed-bar, .timeline-container {
+    margin: 10px 0;
+    padding: 15px;
+  }
+
+  .carplay-btn {
+    font-size: 0.9em; /* Slightly smaller font size for smaller devices */
+  }
+
+  .timeline-labels {
+    padding-top: 3px; /* Less space on smaller screens */
+  }
+}
+
+/* Custom scrollbar for a more refined look */
+::-webkit-scrollbar {
+  width: 5px;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #202225;
 }
