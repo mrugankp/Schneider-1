@@ -6,7 +6,7 @@ const StartScreen = () => {
   const navigate = useNavigate();
 
   const handleJoinClick = () => {
-    navigate('/login'); // Navigate to login when "Join" is clicked
+    navigate('/signup'); // Navigate to signup when "Join" is clicked
   };
 
   return (

@@ -1,4 +1,4 @@
-.login-container {
+.signup-container {
   background-color: #000; /* Adjust to match the exact color */
   color: #fff;
   width: 100%;
@@ -9,7 +9,7 @@
   justify-content: center;
 }
 
-.login-logo {
+.signup-logo {
   /* Placeholder for the logo */
   width: 100%;
   background-image: url('./LOGO.png'); /* Add your logo image path */
@@ -29,7 +29,7 @@ p {
   /* Add font styling that matches the image */
 }
 
-.login-form {
+.signup-form {
   width: 300px; /* Adjust width as needed */
 }
 
@@ -57,7 +57,7 @@ button {
   /* Add more styling to match the button styles from the image */
 }
 
-.login-footer {
+.singup-footer {
   width: 100%;
   margin-top: 20px;
 }
