@@ -4,13 +4,12 @@ import { useNavigate } from 'react-router-dom';
 
 const TruckConnect = () => {
   let navigate = useNavigate();
-  let navigate1 = useNavigate();
   const handleDisableDrivingMode = () => {
     navigate('/communications'); 
   };
 
   const handleStatsBoard = () => {
-    navigate1('/stats'); 
+    navigate('/stats'); 
   };
 
   const speed = 120; // This could come from props, state, or be calculated
@@ -34,8 +33,8 @@ const TruckConnect = () => {
         <button onClick={handleStatsBoard} className="circle-button">
           Disable Driving Mode
         </button>
-        <button onClick={handleDisableDrivingMode} className="circle-button">
-          Map
+        <button className="circle-button">
+        <a href="https://waze.com/ul?ll=40.689247,-74.044502&navigate=yes">Map</a>
         </button>
         <button onClick={handleDisableDrivingMode} className="circle-button">
           Communication
