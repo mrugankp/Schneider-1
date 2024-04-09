@@ -10,19 +10,20 @@ const CommunicationsChannel = () => {
         <input type="search" placeholder="Search" className="communications-search" />
       </div>
     <div className="communications-stories">
+      <h3>Stories </h3>
     <div className="story" id="my-story">
       <img src='/Users/tanayparikh/Desktop/CS 639/Schneider-1/EasyTrucking/easytrucking/src/images/download.jpeg' alt="Me" className="story-picture" />
-      <span>Me</span>
+      <span>Me:  </span>
       <span>Long Drive Tn!</span>
     </div>
     <div className="story">
       <img src="DrivingMode.jpeg" alt="Eric" className="story-picture" />
-      <span>Eric</span>
+      <span>Eric:  </span>
       <span>Guys, where's the brake?</span>
     </div>
     <div className="story">
       <img src="prof photo.jpeg" alt="Jane" className="story-picture" />
-      <span>Jane</span>
+      <span>Jane:  </span>
       <span>On the Move!</span>
     </div>
   </div>
@@ -36,7 +37,7 @@ const CommunicationsChannel = () => {
         </div>
         <div className="message">
           <div className="message-info">
-            <span>Helen (S1342)</span>
+            <span>Schneider Service (S1342)</span>
             <span className="message-status">Hey, let me know if you get any obstructions...</span>
           </div>
           <button className="call-button">Call</button>
