@@ -1,6 +1,7 @@
 import React from 'react';
 import './TruckConnect.css';
 import { useNavigate } from 'react-router-dom';
+import MapComponent from './MapComponent';
 
 const TruckConnect = () => {
   let navigate = useNavigate();
@@ -10,6 +11,10 @@ const TruckConnect = () => {
 
   const handleStatsBoard = () => {
     navigate('/stats'); 
+  };
+
+  const handleMap = () => {
+    navigate('/map');
   };
 
   const speed = 120; // This could come from props, state, or be calculated
@@ -25,16 +30,15 @@ const TruckConnect = () => {
     }
   };
 
-  const speedPercentage = Math.min(100, (speed / 200) * 100); // Assuming 200 is the max speed
-
   return (
+    
     <div className="dashboard-container">
       <div className="button-container">
         <button onClick={handleStatsBoard} className="circle-button">
           Disable Driving Mode
         </button>
-        <button className="circle-button">
-        <a href="https://waze.com/ul?ll=40.689247,-74.044502&navigate=yes">Map</a>
+        <button onClick={handleMap} className="circle-button">
+          Map
         </button>
         <button onClick={handleDisableDrivingMode} className="circle-button">
           Communication
@@ -51,7 +55,6 @@ const TruckConnect = () => {
         </div>
       </div>
 
-
         <div className="stat">
            <b>To Dest: 180 miles</b>
         </div>
@@ -62,7 +65,6 @@ const TruckConnect = () => {
         <b>Suggested Break: 12:00 PM</b>
         </div>
       </div>
-
  
       <div className="timeline-container">
       <div className="timeline">
@@ -82,3 +84,11 @@ const TruckConnect = () => {
 };
 
 export default TruckConnect;
+
+
+
+
+
+
+
+

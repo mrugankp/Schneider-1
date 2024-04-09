@@ -5,12 +5,18 @@
   background: #333; /* A deep grey that sets a professional tone */
   color: #ffffff;
   padding: 20px;
-  max-width: 500px;
+  max-width: 100%;
   margin: auto; /* Give some space at the top and bottom */
-  height: 100vh; /* Adjust height considering the margin */
+  height: auto; /* Adjust height considering the margin */
   display: flex;
   flex-direction: column;
   text-align: center;
+}
+
+.map-container {
+  height: 100vh; /* or 100vh for full height */
+  width: 100%; /* or a specific width if required */
+  position: relative;
 }
 
 .button-container {
