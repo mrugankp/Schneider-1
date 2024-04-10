@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route, Navigate  } from 'react-router-dom';
 import SignUp from './SignUp';
 import Login from './Login';
 import MapComponent from './MapComponent';
+import MaintenancePage from './MaintenancePage';
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
         <Route path="/communications" element={<CommunicationsChannel />} />
         <Route path="/stats" element={<StatsBoard />} />
         <Route path="/map" element={<MapComponent />} />
+        <Route path="/maintenance" element={<MaintenancePage />} />
       </Routes>
     </BrowserRouter>
   );

@@ -17,6 +17,10 @@ const TruckConnect = () => {
     navigate('/map');
   };
 
+  const handleMaintenance = () => {
+    navigate('/maintenance');
+  }
+
   const speed = 120; // This could come from props, state, or be calculated
 
   // Function to determine the color based on speed
@@ -42,6 +46,9 @@ const TruckConnect = () => {
         </button>
         <button onClick={handleDisableDrivingMode} className="circle-button">
           Communication
+        </button>
+        <button onClick={handleMaintenance} className='circle-button'>
+          Maintenance Videos
         </button>
       </div>
 
