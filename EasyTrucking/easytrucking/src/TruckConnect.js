@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './TruckConnect.css';
 import { useNavigate } from 'react-router-dom';
 import MapComponent from './MapComponent';
 
 const TruckConnect = () => {
   let navigate = useNavigate();
+  const [currentTime, setCurrentTime] = useState(new Date());
+
   const handleDisableDrivingMode = () => {
     navigate('/communications'); 
   };
@@ -34,6 +36,17 @@ const TruckConnect = () => {
     }
   };
 
+  useEffect(() => {
+    // Update the current time every second
+    const intervalId = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+
+    return () => clearInterval(intervalId);
+  }, []);
+
+  const formattedTime = currentTime.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
+
   return (
     
     <div className="dashboard-container">
@@ -54,7 +67,7 @@ const TruckConnect = () => {
 
       <div className="stats-container">
         <div className="time-display">
-          <h1><b>Time: 10:45 AM</b></h1>
+          <h1><b>Time: {formattedTime}</b></h1>
         </div>
 
         <div className="speed-bar">
@@ -91,11 +104,3 @@ const TruckConnect = () => {
 };
 
 export default TruckConnect;
-
-
-
-
-
-
-
-
