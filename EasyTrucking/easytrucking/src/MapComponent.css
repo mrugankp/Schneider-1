@@ -1,0 +1,9 @@
+.total-distance {
+    position: absolute;       /* or `fixed` depending on your needs */
+    z-index: 1000;            /* High z-index to ensure it's above other elements */
+    bottom: 20px;             /* Positioning from the bottom of the map container */
+    left: 20px;               /* Positioning from the left of the map container */
+    width: auto;              /* Or specify a width */
+    background-color: #FFF;   /* Background color for visibility */
+    text-emphasis: bold;
+  }

@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import './TruckConnect.css';
 import { useNavigate } from 'react-router-dom';
-import MapComponent from './MapComponent';
+import { useLocation } from 'react-router-dom';
 
 const TruckConnect = () => {
   let navigate = useNavigate();
   const [currentTime, setCurrentTime] = useState(new Date());
-
+  const location = useLocation();
+  const dataPassed = location.state?.totalMiles;
+  console.log(dataPassed)
   const handleDisableDrivingMode = () => {
     navigate('/communications'); 
   };
@@ -65,6 +67,8 @@ const TruckConnect = () => {
         </button>
       </div>
 
+
+
       <div className="stats-container">
         <div className="time-display">
           <h1><b>Time: {formattedTime}</b></h1>
@@ -76,7 +80,7 @@ const TruckConnect = () => {
       </div>
 
         <div className="stat">
-           <b>To Dest: 180 miles</b>
+           <b>Total Distance to Destination: {dataPassed} miles</b>
         </div>
         <div className="stat">
         <b>Total Time: 2 hr 30 min (Driving)</b>
