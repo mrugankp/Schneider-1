@@ -1,3 +1,7 @@
+.maintenance-page-container {
+    padding: 20px;
+}
+
 .maintenance-videos-container {
     font-size: 24px;
     text-align: center;
@@ -5,50 +9,38 @@
     background-color: #f3601c;
     border: 4px solid gray;
     border-radius: 8px;
-    margin-bottom: 20px; 
+    margin-bottom: 20px;
+    color: white;
 }
 
-.description-container {
-    left: 0px;
-    width: 25%;
+.videos-grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    grid-template-rows: repeat(3, auto); /* Three rows */
+    grid-gap: 20px; /* Gap between grid items */
+}
+
+.video-description-container {
     font-size: 24px;
-    color: white;
     text-align: center;
     padding: 10px;
     background-color: grey;
     border: 4px solid #f3601c;
     border-radius: 8px;
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
+    color: white;
 }
 
 .player-container {
     display: flex;
-    align-items: center; 
+    align-items: center;
+    justify-content: center; /* Center the player horizontally */
 }
 
-.video-description-left-container {
-    position: relative;
-    left: 0px;
-    width: 48%;
-    font-size: 24px;
-    text-align: center;
-    padding: 10px;
-    background-color: grey;
-    border: 4px solid #f3601c;
-    border-radius: 8px;
-    margin-bottom: 10px; 
-}
-
-.video-description-right-container {
-    position: relative;
-    left: 950px;
-    top: -1194px;
-    width: 48%;
-    font-size: 24px;
-    text-align: center;
-    padding: 10px;
-    background-color: grey;
-    border: 4px solid #f3601c;
-    border-radius: 8px;
-    margin-bottom: 10px; 
+.description-box {
+    border: 4px solid #f3601c; /* Border style */
+    background-color: white; /* White background */
+    padding: 10px; /* Padding around the text */
+    display: inline-block; /* Ensure the box size matches the text content */
+    color: black; /* Text color */ /* Customize the border color and style */
 }
