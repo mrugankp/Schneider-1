@@ -54,7 +54,7 @@ const TruckConnect = () => {
     <div className="dashboard-container">
       <div className="button-container">
         <button onClick={handleStatsBoard} className="circle-button">
-          Disable Driving Mode
+          My Stats
         </button>
         <button onClick={handleMap} className="circle-button">
           Map
@@ -89,17 +89,19 @@ const TruckConnect = () => {
         <b>Suggested Break: 12:00 PM</b>
         </div>
       </div>
- 
+
       <div className="timeline-container">
       <div className="timeline">
-        <div className="timeline-segment driving"></div>
-        <div className="timeline-segment break"></div>
-        <div className="timeline-segment driving"></div>
+        {/*add time values for each segment of the timeline*/}
+        <div className="timeline-segment driving">1 hour</div>
+        <div className="timeline-segment break">15 minutes</div>
+        <div className="timeline-segment driving">1 hour</div>
       </div>
       <div className="timeline-labels">
         <span className="timeline-label start">8 AM</span>
         <span className="timeline-label middle">9 AM</span>
         <span className="timeline-label end">10 AM</span>
+
       </div>
     </div>
     </div>

@@ -99,62 +99,56 @@
   padding: 20px;
   border-radius: 20px;
 }
-
+.timeline-segment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black; /* Ensure the text color contrasts well with the segment background */
+  font-family: 'Roboto', sans-serif; /* Apply Roboto for consistency */
+  font-size: 16px; /* Adjust the font size according to your design needs */
+  font-weight: 500; /* Medium weight for better readability */
+  text-transform: uppercase; /* Optional: Makes the text uppercase for emphasis */
+}
 .timeline {
   display: grid;
-  grid-template-columns: repeat(5, 10fr); /* creates five columns with equal width */
+  grid-template-columns: repeat(40, minmax(100px, 1fr));
   background-color: #333;
-  height: 200px;
+  height: 300px;
   border-radius: 15px;
   overflow: hidden;
-}
-
-.timeline-segment {
-  border: 2px solid yellow; /* Just for testing */
+  position: relative;
+  grid-gap: 2px;
 }
 
 .timeline-segment.driving {
-  background-color: #4CAF50;
-  grid-column: span 2; /* driving segments take up two parts */
+  background-color: #4CAF50; /* Color for driving segments */
+  /* this should be thicker than the break segment */
+  grid-column: span 5;
+  /* No need to set grid-column here, will auto-adjust based on content */
 }
 
 .timeline-segment.break {
-  background-color: #F44336;
-  grid-column: span 1; /* break segments take up one part */
+  background-color: #F44336; /* Color for break segments */
+  /* No need to set grid-column here, will auto-adjust based on content */
 }
 
 .timeline-labels {
+  display: grid;
+  /* add labels to the start middle and end*/
+  grid-template-columns: 1fr 1fr 1fr;
   position: absolute;
-  bottom: -40px; /* Lower the labels below the timeline */
-  left: 0; /* Align with the left edge of the timeline */
-  width: 100%; /* Match width with the timeline */
-  display: flex;
-  justify-content: space-between; /* Even spacing for labels */
+  bottom: -40px; /* Adjust as necessary to fit */
+  left: 0;
+  width: 100%;
 }
 
 .timeline-label {
-  position: absolute;
   color: white;
-  background-color: #222; /* Make labels visible */
+  background-color: #222; /* Background for better visibility */
   padding: 5px 10px;
   border-radius: 10px;
   text-align: center;
-}
-
-/* Calculate left offset based on segment width and adjust translateX accordingly */
-.timeline-label.start {
-  left: 0; /* No need to translate */
-}
-
-.timeline-label.middle {
-  left: 50%; /* Offset to the middle */
-  transform: translateX(-50%);
-}
-
-.timeline-label.end {
-  right: 0; /* Align to the right edge */
-  left: auto; /* Override left value */
-  transform: translateX(-50%);
+  /* Remove position absolute to allow grid to manage placement */
 }
 
 @media (max-width: 500px) {
