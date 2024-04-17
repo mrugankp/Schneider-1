@@ -1,8 +1,14 @@
 import React from 'react';
 import ReactPlayer from 'react-player';
 import './MaintenancePage.css';
+import { useNavigate } from 'react-router-dom';
 
 const MaintenancePage = () => {
+    const navigate = useNavigate();
+
+    const handleBackToTruckConnect = () => {
+        navigate('/truckconnect');
+    };
     return (
         <div className='maintenance-page-container'>
             <div className='maintenance-videos-container'><h1><u>Truck Maintenance Videos</u></h1></div>
@@ -79,6 +85,9 @@ const MaintenancePage = () => {
                         />
                     </div>
                 </div>
+            </div>
+            <div>
+                <button onClick={handleBackToTruckConnect}>Go Back to Truck Connect</button>
             </div>
         </div>
     );

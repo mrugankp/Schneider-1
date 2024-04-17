@@ -204,8 +204,14 @@
 import React, { useEffect, useRef } from 'react';
 import './statsBoard.css'; // Ensure you have the corresponding CSS file
 import Chart from 'chart.js/auto'; // Import Chart.js
+import { useNavigate } from 'react-router-dom';
 
 const StatsBoard = () => {
+  const navigate = useNavigate();
+  const handleBackToTruckConnect = () => {
+    navigate('/truckconnect');
+  };
+
   const chartRef = useRef(null);
   const chartInstance = useRef(null);
 
@@ -306,6 +312,9 @@ const StatsBoard = () => {
       <div className="stats-summary">
         <div>Total Dist. Covered: {statsData.totalDistance}</div>
         <div>Total Time Driven: {statsData.totalTime}</div>
+      </div>
+      <div>
+        <button onClick={handleBackToTruckConnect} class = "total-distance">Go Back to Truck Connect</button>
       </div>
     </div>
   );

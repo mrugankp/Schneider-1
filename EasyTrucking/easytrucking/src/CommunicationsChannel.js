@@ -1,7 +1,13 @@
 import React from 'react';
 import './CommunicationsChannel.css'; // Make sure to create a CSS file for styling
+import { useNavigate } from 'react-router-dom';
 
 const CommunicationsChannel = () => {
+  const navigate = useNavigate();
+
+  const handleBackToTruckConnect = () => {
+    navigate('/truckconnect');
+  };
   return (
     <div className='comm-container'>
       <div className='comm-title'>
@@ -80,7 +86,9 @@ const CommunicationsChannel = () => {
           <button className="call-button">Call</button>
         </div>
       </div>
-
+      <div>
+        <button onClick={handleBackToTruckConnect} class = "total-distance">Go Back to Truck Connect</button>
+      </div>
     </div>
   )
 }

@@ -96,6 +96,7 @@ const TruckConnect = () => {
         <div className="timeline-segment driving">1 hour</div>
         <div className="timeline-segment break">15 minutes</div>
         <div className="timeline-segment driving">1 hour</div>
+        <div className="timeline-segment NA">Freetime</div>
       </div>
       <div className="timeline-labels">
         <span className="timeline-label start">8 AM</span>

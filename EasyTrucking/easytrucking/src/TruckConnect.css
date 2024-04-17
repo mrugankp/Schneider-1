@@ -132,6 +132,11 @@
   /* No need to set grid-column here, will auto-adjust based on content */
 }
 
+.timeline-segment.NA {
+  background-color: white;
+  grid-column: span 6;
+}
+
 .timeline-labels {
   display: grid;
   /* add labels to the start middle and end*/
