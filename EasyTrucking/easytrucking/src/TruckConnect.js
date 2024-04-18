@@ -25,7 +25,7 @@ const TruckConnect = () => {
     navigate('/maintenance');
   }
 
-  const speed = 120; // This could come from props, state, or be calculated
+  const speed = 68; // This could come from props, state, or be calculated
 
   // Function to determine the color based on speed
   const getSpeedBarColor = (currentSpeed) => {
@@ -66,27 +66,34 @@ const TruckConnect = () => {
           Maintenance Videos
         </button>
       </div>
-
-
-
-      <div className="stats-container">
-        <div className="time-display">
-          <h1><b>Time: {formattedTime}</b></h1>
-        </div>
-
-        <div className="speed-bar">
-          Speed: <div className="speed-indicator" style={{ width: 100, backgroundColor: getSpeedBarColor(speed),}}>{speed}mph
-        </div>
+      
+      <div className="time-display">
+        <h1><b>Time: {formattedTime}</b></h1>
       </div>
 
-        <div className="stat">
-           <b>Total Distance to Destination: {dataPassed} miles</b>
-        </div>
-        <div className="stat">
-        <b>Total Time: 2 hr 30 min (Driving)</b>
-        </div>
-        <div className="stat">
-        <b>Suggested Break: 12:00 PM</b>
+      <div className='stat-container'>
+        <div className='stat-grid-container'>
+          <div className='indiv-stat-container'>
+            <div className="stat-label"><b>Speed:</b></div>
+            <div className="speed-indicator" style={{ backgroundColor: getSpeedBarColor(speed) }}>
+              <span className="stat-value">{speed}mph</span>
+            </div>
+          </div>
+
+          <div className='indiv-stat-container'>
+            <div className="stat-label"><b>Total Distance to Destination:</b></div>
+            <div className="stat-value"><b>{dataPassed} miles</b></div>
+          </div>
+
+          <div className='indiv-stat-container'>
+            <div className="stat-label"><b>Total Time:</b></div>
+            <div className="stat-value"><b>2 hr 30 min (Driving)</b></div>
+          </div>
+
+          <div className='indiv-stat-container'>
+            <div className="stat-label"><b>Suggested Break:</b></div>
+            <div className="stat-value"><b>12:00 PM</b></div>
+          </div>
         </div>
       </div>
 
