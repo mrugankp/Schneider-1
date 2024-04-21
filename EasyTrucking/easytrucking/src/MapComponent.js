@@ -165,12 +165,13 @@ const handleBackToTruckConnect = () => {
     }
   }, [userLocation, destination, map]);
 
+  const kmsDistance = totalDistance ? (totalDistance * 1.60934).toFixed(2) : null;
 return (
   <div>
     <div ref={mapContainerRef} className="map-container" />
-    {totalDistance && (
-      <div className="total-distance">
-        Total Distance: {totalDistance} miles
+    {kmsDistance && (
+      <div className="total-distance-but">
+        Total Distance: {kmsDistance} km
       </div>
     )}
     <button onClick={handleBackToTruckConnect} class = "total-distance">Go Back to Truck Connect</button>
