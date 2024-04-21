@@ -19,7 +19,9 @@ const MapComponent = () => {
 const handleBackToTruckConnect = () => {
   if (totalDistance != null) { // Make sure totalDistance is not null
     navigate('/truckconnect', { state: { totalMiles: totalDistance } });
-  } else {
+  } else if(totalDistance == null){
+    navigate('/truckconnect', { state: { totalMiles: totalDistance*0} });
+  }else {
     // Handle the case where totalDistance has not been set yet
     console.log("Total distance is not available.");
     // Possibly navigate with an error state or show an error message
