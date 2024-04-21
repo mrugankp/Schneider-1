@@ -150,14 +150,14 @@ const TruckConnect = () => {
       <div className="timeline">
         {/*add time values for each segment of the timeline*/}
         <div className="timeline-segment driving">1 hour</div>
-        <div className="timeline-segment break">15 minutes</div>
+        <div className="timeline-segment break">15 minutes Break</div>
         <div className="timeline-segment driving">1 hour</div>
-        <div className="timeline-segment NA">Freetime</div>
+        <div className="timeline-segment NA">Current</div>
       </div>
       <div className="timeline-labels">
-        <span className="timeline-label start">8 AM</span>
-        <span className="timeline-label middle">9 AM</span>
-        <span className="timeline-label end">10 AM</span>
+        <span className="timeline-label middle">{Number((currentTime.toLocaleTimeString([], { hour: 'numeric'}))[0])-2} PM</span>
+        <span className="timeline-label end">{Number((currentTime.toLocaleTimeString([], { hour: 'numeric'}))[0])-2} PM</span>
+        <span className="timeline-label start">{currentTime.toLocaleTimeString([], { hour: 'numeric'})}</span>
 
       </div>
     </div>
