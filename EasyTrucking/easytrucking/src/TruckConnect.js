@@ -7,9 +7,12 @@ const TruckConnect = () => {
   let navigate = useNavigate();
   const [currentTime, setCurrentTime] = useState(new Date());
   const [speed, setSpeed] = useState(0);
+  const [prevPosition, setPrevPosition] = useState(null);
   const location = useLocation();
   const dataPassed = location.state?.totalMiles;
-  console.log(dataPassed)
+
+  
+
 
   const handleDisableDrivingMode = () => {
     navigate('/communications'); 
@@ -27,8 +30,6 @@ const TruckConnect = () => {
     navigate('/maintenance');
   }
 
-  //const speed = 68; 
-
   // Function to determine the color based on speed
   const getSpeedBarColor = (currentSpeed) => {
     if (currentSpeed >= 90) {
@@ -39,6 +40,16 @@ const TruckConnect = () => {
       return '#4CAF50'; // Speed is below 60, color the bar green
     }
   };
+  const calculateDistance = (lat1, lon1, lat2, lon2) => {
+    const R = 6371; // Earth's radius in km
+    const dLat = (lat2 - lat1) * Math.PI / 180;
+    const dLon = (lon2 - lon1) * Math.PI / 180;
+    const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+              Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+              Math.sin(dLon / 2) * Math.sin(dLon / 2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    return R * c;
+  };
 
   useEffect(() => {
     // Update the current time every second
@@ -47,24 +58,35 @@ const TruckConnect = () => {
     }, 1000);
 
     // Setup to monitor speed
-  if (navigator.geolocation) {
-    navigator.geolocation.watchPosition(
-      (position) => {
-        const speedKmh = (position.coords.speed * 3.6).toFixed(2); // Convert m/s to km/h
-        setSpeed(speedKmh);
-      },
-      (error) => {
-        console.error('Geolocation error:', error);
-      },
-      {
-        enableHighAccuracy: true,
-        timeout: 5000,
-        maximumAge: 0
-      }
-    );
-  } else {
-    console.error('Geolocation is not supported by this browser.');
-  }
+    if (navigator.geolocation) {
+      navigator.geolocation.watchPosition(
+        (position) => {
+          const { latitude, longitude, speed: reportedSpeed } = position.coords;
+          if (reportedSpeed !== null && reportedSpeed >= 0) {
+            setSpeed((reportedSpeed * 3.6).toFixed(2)); // Convert m/s to km/h
+          } else if (prevPosition) {
+            // Manual speed calculation
+            const timeDiff = (position.timestamp - prevPosition.timestamp) / 1000; // in seconds
+            if (timeDiff > 0) {
+              const distance = calculateDistance(latitude, longitude, prevPosition.latitude, prevPosition.longitude);
+              const calculatedSpeed = (distance / timeDiff) * 3600; // km/h
+              setSpeed(calculatedSpeed.toFixed(2));
+            }
+          }
+          setPrevPosition({ latitude, longitude, timestamp: position.timestamp });
+        },
+        (error) => {
+          console.error('Geolocation error:', error);
+        },
+        {
+          enableHighAccuracy: true,
+          timeout: 5000,
+          maximumAge: 0
+        }
+      );
+    } else {
+      console.error('Geolocation is not supported by this browser.');
+    }
 
   return () => {
     clearInterval(intervalId);
@@ -99,7 +121,7 @@ const TruckConnect = () => {
           <div className='indiv-stat-container'>
             <div className="stat-label"><b>Speed:</b></div>
             <div className="speed-indicator" style={{ backgroundColor: getSpeedBarColor(speed) }}>
-              <span className="stat-value">{speed}mph</span>
+              <span className="stat-value">{speed}km/h</span>
             </div>
           </div>
 
