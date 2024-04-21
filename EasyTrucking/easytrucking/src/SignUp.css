@@ -47,14 +47,30 @@ input {
 }
 
 button {
-  width: 100%;
-  padding: 10px;
+  width: 105%; /* Adjusted to not span the full container width for better aesthetics */
+  padding: 15px;
   border: none;
-  border-radius: 5px;
-  background-color: #fff; /* Adjust if you have a specific button color */
-  color: #000;
+  border-radius: 30px; /* More rounded corners for a modern look */
+  background-color: #1a1a1a; /* Dark background for contrast */
+  color: #fff; /* White text for readability */
   cursor: pointer;
-  /* Add more styling to match the button styles from the image */
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align-last: center;
+  letter-spacing: 1px; /* Increase letter-spacing for better readability */
+  transition: background-color 0.2s, transform 0.1s; /* Smooth background color transition and slight transform on click */
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16); /* Subtle shadow for depth */
+  margin-bottom: 10px; /* Space between buttons */
+}
+
+button:hover {
+  background-color: #333; /* Slightly lighter background on hover */
+}
+
+button:active {
+  transform: translateY(2px); /* Small shift to mimic button press */
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12); /* Reduced shadow to mimic button press */
 }
 
 .singup-footer {

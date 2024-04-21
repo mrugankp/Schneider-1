@@ -25,7 +25,7 @@ const TruckConnect = () => {
     navigate('/maintenance');
   }
 
-  const speed = 68; // This could come from props, state, or be calculated
+  const speed = 68; 
 
   // Function to determine the color based on speed
   const getSpeedBarColor = (currentSpeed) => {
@@ -50,7 +50,6 @@ const TruckConnect = () => {
   const formattedTime = currentTime.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
 
   return (
-    
     <div className="dashboard-container">
       <div className="button-container">
         <button onClick={handleStatsBoard} className="circle-button">
@@ -66,16 +65,9 @@ const TruckConnect = () => {
           Maintenance Videos
         </button>
       </div>
+      
       <div className="time-display">
         <h1><b>Time: {formattedTime}</b></h1>
-      <div className="stats-container">
-        <div className="time-display">
-          <h1><b>Time: {formattedTime}</b></h1>
-        </div>
-
-        <div className="stat">
-          Speed: <div className="speed-indicator" style={{ width: 100, backgroundColor: getSpeedBarColor(speed),}}>{speed}mph
-        </div>
       </div>
 
       <div className='stat-container'>
