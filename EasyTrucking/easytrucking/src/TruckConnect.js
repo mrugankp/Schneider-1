@@ -12,6 +12,7 @@ const TruckConnect = () => {
   const dataPassed = location.state?.totalMiles;
   // converts miles to kilometers
   const totalKilometers = dataPassed ? (dataPassed * 1.60934).toFixed(2) : null;
+  const totalTime = totalKilometers ? ((totalKilometers / 60)*60).toFixed(2)  : null;
   console.log(totalKilometers)
 
   
@@ -135,7 +136,7 @@ const TruckConnect = () => {
 
           <div className='indiv-stat-container'>
             <div className="stat-label"><b>Total Time:</b></div>
-            <div className="stat-value"><b>2 hr 30 min (Driving)</b></div>
+            <div className="stat-value"><b>{totalTime} mins (Driving)</b></div>
           </div>
 
           <div className='indiv-stat-container'>
