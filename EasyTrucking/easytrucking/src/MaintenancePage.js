@@ -87,7 +87,7 @@ const MaintenancePage = () => {
                 </div>
             </div>
             <div>
-                <button onClick={handleBackToTruckConnect}>Go Back to Truck Connect</button>
+                <button onClick={handleBackToTruckConnect} class = "total-distance">Go Back to Truck Connect</button>
             </div>
         </div>
     );
