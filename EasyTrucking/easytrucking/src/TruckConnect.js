@@ -156,7 +156,7 @@ const TruckConnect = () => {
       </div>
       <div className="timeline-labels">
         <span className="timeline-label middle">{Number((currentTime.toLocaleTimeString([], { hour: 'numeric'}))[0])-2} PM</span>
-        <span className="timeline-label end">{Number((currentTime.toLocaleTimeString([], { hour: 'numeric'}))[0])-2} PM</span>
+        <span className="timeline-label end">{Number((currentTime.toLocaleTimeString([], { hour: 'numeric'}))[0])-1} PM</span>
         <span className="timeline-label start">{currentTime.toLocaleTimeString([], { hour: 'numeric'})}</span>
 
       </div>

@@ -230,10 +230,10 @@ const StatsBoard = () => {
     { name: "Route Adherence", score: "95%" }
   ];
 
-  const myStatsData = {
-    totalDistance: "1200 miles",
-    totalTime: "18 hours"
-  };
+  const myStatsData = [
+    {totalDistance: "15000 miles",
+    totalTime: "250 hours"}
+  ];
 
   const badges = [
     { id: 'distance', label: 'Long Hauler', description: 'For covering 10,000 miles' },
@@ -267,21 +267,25 @@ const StatsBoard = () => {
             </div>
           ))}
         </div>
+      
       <div className="my-stats">
-        <h1>My Stats</h1>
-        <p>Total Distance Covered: {myStatsData.totalDistance}</p>
-        <p>Total Time Driven: {myStatsData.totalTime}</p>
+      <h1>My Stats</h1>
+      {myStatsData.map(stats => (
+            <div className="stats" key={stats.name}>
+              <p>Total Distance Covered: {stats.totalDistance}</p>
+              <p>Total Time Driven: {stats.totalTime}</p>
+            </div>
+          ))}
       </div>
 
-      <div className="badges-section">
-        <h1>Badges for your performance!</h1>
-        
-        {badges.map((badge) => (
-          <div key={badge.id} className="badge">
-            <h3>{badge.label}</h3>
-            <p>{badge.description}</p>
-          </div>
-        ))}
+      <h1>Badges!</h1>
+      <div className="badges-section">        
+      {badges.map((badge) => (
+        <div key={badge.id} className="badge">
+          <h3>{badge.label}</h3>
+          <p>{badge.description}</p>
+        </div>
+      ))}
       </div>
       </div>
       </div>
