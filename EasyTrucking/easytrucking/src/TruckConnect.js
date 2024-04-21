@@ -6,9 +6,11 @@ import { useLocation } from 'react-router-dom';
 const TruckConnect = () => {
   let navigate = useNavigate();
   const [currentTime, setCurrentTime] = useState(new Date());
+  const [speed, setSpeed] = useState(0);
   const location = useLocation();
   const dataPassed = location.state?.totalMiles;
   console.log(dataPassed)
+
   const handleDisableDrivingMode = () => {
     navigate('/communications'); 
   };
@@ -25,7 +27,7 @@ const TruckConnect = () => {
     navigate('/maintenance');
   }
 
-  const speed = 68; 
+  //const speed = 68; 
 
   // Function to determine the color based on speed
   const getSpeedBarColor = (currentSpeed) => {
@@ -44,7 +46,29 @@ const TruckConnect = () => {
       setCurrentTime(new Date());
     }, 1000);
 
-    return () => clearInterval(intervalId);
+    // Setup to monitor speed
+  if (navigator.geolocation) {
+    navigator.geolocation.watchPosition(
+      (position) => {
+        const speedKmh = (position.coords.speed * 3.6).toFixed(2); // Convert m/s to km/h
+        setSpeed(speedKmh);
+      },
+      (error) => {
+        console.error('Geolocation error:', error);
+      },
+      {
+        enableHighAccuracy: true,
+        timeout: 5000,
+        maximumAge: 0
+      }
+    );
+  } else {
+    console.error('Geolocation is not supported by this browser.');
+  }
+
+  return () => {
+    clearInterval(intervalId);
+    };
   }, []);
 
   const formattedTime = currentTime.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
