@@ -131,7 +131,7 @@ const TruckConnect = () => {
 
           <div className='indiv-stat-container'>
             <div className="stat-label"><b>Total Distance to Destination:</b></div>
-            <div className="stat-value"><b>{totalKilometers} km</b></div>
+            <div className="stat-value"><b>{(totalKilometers*0.621371).toFixed(2)} miles</b></div>
           </div>
 
           <div className='indiv-stat-container'>
