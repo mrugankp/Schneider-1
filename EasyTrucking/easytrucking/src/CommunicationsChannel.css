@@ -164,6 +164,22 @@ comm-stories-wrapper {
 .new-message-button:hover {
   background-color: #45a049;
 }
+.total-distance {
+  position: fixed;      /* Fixed positioning relative to the viewport */
+  bottom: 10px;         /* 10 pixels from the bottom */
+  left: 10px;           /* 10 pixels from the left */
+  z-index: 1000;        /* Ensure it stays on top of other content */
+  padding: 10px 20px;   /* Padding for better appearance */
+  background-color: #007bff; /* Background color */
+  color: white;         /* Text color */
+  border: none;         /* No border */
+  border-radius: 5px;   /* Rounded corners */
+  cursor: pointer;      /* Pointer cursor on hover */
+}
+
+.total-distance:hover {
+  background-color: #0056b3; /* Darker shade on hover for better UI feedback */
+}
 
 body {
   margin: 0;
