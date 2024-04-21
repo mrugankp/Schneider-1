@@ -200,10 +200,8 @@
 
 
 
-
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import './statsBoard.css'; // Ensure you have the corresponding CSS file
-import Chart from 'chart.js/auto'; // Import Chart.js
 import { useNavigate } from 'react-router-dom';
 
 const StatsBoard = () => {
@@ -212,113 +210,86 @@ const StatsBoard = () => {
     navigate('/truckconnect');
   };
 
-  const chartRef = useRef(null);
-  const chartInstance = useRef(null);
-
   const previousScore = 75; // Example previous score
   const currentScore = 92; // Example current score
   const improvement = currentScore - previousScore; // Calculate improvement
   const improvementMessage = `Great job! You've improved by ${improvement}% compared to the last period.`;
 
-  useEffect(() => {
-    if (chartInstance.current) {
-      chartInstance.current.destroy();
-    }
+  const tripData = [
+    { trip: 'Trip 1', yourPerformance: 'Approximately 80%', averageScore: 'Around 75%' },
+    { trip: 'Trip 2', yourPerformance: 'Slightly above 80%', averageScore: 'Approximately 78%' },
+    { trip: 'Trip 3', yourPerformance: 'Just below 90%', averageScore: 'Slightly above 80%' },
+    { trip: 'Trip 4', yourPerformance: 'Approximately 88%', averageScore: 'Around 82%' },
+    { trip: 'Trip 5', yourPerformance: 'Just above 90%', averageScore: 'Approximately 84%' }
+  ];
 
-    const ctx = chartRef.current.getContext('2d');
-    chartInstance.current = new Chart(ctx, {
-      type: 'line',
-      data: {
-        labels: ['Trip 1', 'Trip 2', 'Trip 3', 'Trip 4', 'Trip 5'],
-        datasets: [{
-          label: 'Your Performance',
-          data: [80, 83, 85, 90, 92],
-          backgroundColor: 'rgba(54, 162, 235, 0.5)',
-          borderColor: 'rgba(54, 162, 235, 1)',
-          borderWidth: 2,
-        }, {
-          label: 'Average Driver Score',
-          data: [75, 77, 76, 80, 82],
-          backgroundColor: 'rgba(255, 99, 132, 0.5)',
-          borderColor: 'rgba(255, 99, 132, 1)',
-          borderWidth: 2,
-        }],
-      },
-      options: {
-        aspectRatio: 2, // Adjust this value as needed for your desired landscape aspect ratio
-        scales: {
-          y: {
-            beginAtZero: true,
-            ticks: {
-              callback: function(value) {
-                return value + '%';
-              }
-            }
-          }
-        }
-      }
-    });
+  const metricsData = [
+    { name: "Speeding", score: "95%" },
+    { name: "Compliance", score: "90%" },
+    { name: "Vehicle Maintenance", score: "88%" },
+    { name: "Route Adherence", score: "95%" }
+  ];
 
-    return () => {
-      if (chartInstance.current) {
-        chartInstance.current.destroy();
-      }
-    };
-  }, []);
-
-  const statsData = {
-    score: `${currentScore}%`,
+  const myStatsData = {
     totalDistance: "1200 miles",
-    totalTime: "18 hours",
-    metrics: [
-      { name: "Speeding", score: "95%" },
-      { name: "Compliance", score: "90%" },
-      { name: "Vehicle Maintenance", score: "88%" },
-      { name: "Route Adherence", score: "95%" }
-    ]
+    totalTime: "18 hours"
   };
+
+  const badges = [
+    { id: 'distance', label: 'Long Hauler', description: 'For covering 10,000 miles' },
+    { id: 'safety', label: 'Safety Star', description: 'For 100 hours of accident-free driving' },
+    { id: 'efficiency', label: 'Fuel Saver', description: 'For exceeding fuel efficiency targets' },
+  ];
 
   return (
     <div className="stats-dashboard">
       <div className="encouraging-message">
         <h2>{improvementMessage}</h2>
       </div>
+      <div className="score-section">Overall Score: 92%</div>
       <div className="top-content">
-        {/* Chart and table are now within the same flexbox container */}
-        <div className="chart-container">
-          <canvas ref={chartRef} id="performanceChart"></canvas>
+        <div className="trip-stats">
+          <h1>Performance Statistics Over Five Trips</h1>
+          {tripData.map((data, index) => (
+            <div className="trip-data" key={index}>
+              <h2>{data.trip}</h2>
+              <p>Your Performance: {data.yourPerformance}</p>
+              <p>Average Driver Score: {data.averageScore}</p>
+            </div>
+          ))}
         </div>
-        <div className="stats-table">
-          {/* The metrics table is now inside a div for layout purposes */}
-          <table className="metrics-table">
-            <tbody>
-              {statsData.metrics.map(metric => (
-                <tr key={metric.name}>
-                  <td>{metric.name}</td>
-                  <td>{metric.score}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <div className="metrics-and-stats">
+          <div className="metrics-stats">
+          <h1>Metrics</h1>
+          {metricsData.map(metric => (
+            <div className="metric" key={metric.name}>
+              <p>{metric.name}: {metric.score}</p>
+            </div>
+          ))}
         </div>
-      </div>
-      <header className="dashboard-header">
+      <div className="my-stats">
         <h1>My Stats</h1>
-        <div className="score-section">
-          My Score
-          <span className="score-value">{statsData.score}</span>
-        </div>
-      </header>
-      <div className="stats-summary">
-        <div>Total Dist. Covered: {statsData.totalDistance}</div>
-        <div>Total Time Driven: {statsData.totalTime}</div>
+        <p>Total Distance Covered: {myStatsData.totalDistance}</p>
+        <p>Total Time Driven: {myStatsData.totalTime}</p>
       </div>
-      <div>
-        <button onClick={handleBackToTruckConnect} class = "total-distance">Go Back to Truck Connect</button>
+
+      <div className="badges-section">
+        <h1>Badges for your performance!</h1>
+        {badges.map((badge) => (
+          <div key={badge.id} className="badge">
+            <h3>{badge.label}</h3>
+            <p>{badge.description}</p>
+          </div>
+        ))}
+      </div>
+      </div>
+      </div>
+      <div className="actions">
+        <button onClick={handleBackToTruckConnect} className="go-back-button">Go Back to Truck Connect</button>
+        
       </div>
     </div>
   );
-  
 };
 
 export default StatsBoard;

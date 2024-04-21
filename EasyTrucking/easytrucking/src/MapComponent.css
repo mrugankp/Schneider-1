@@ -4,6 +4,6 @@
     bottom: 20px;             /* Positioning from the bottom of the map container */
     left: 20px;               /* Positioning from the left of the map container */
     width: auto;              /* Or specify a width */
-    background-color: #FFF;   /* Background color for visibility */
+    background-color: #050505;   /* Background color for visibility */
     text-emphasis: bold;
   }

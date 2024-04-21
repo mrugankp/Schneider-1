@@ -6,21 +6,118 @@
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   padding: 50px;
-  max-width: 100vw; /* Adjusted for full viewport width */
+  max-width: 100vw;
   margin: 10px auto;
+  display: flex;
+  flex-direction: column;
 }
 
-.chart-container {
-  flex: 1;
-  width: 100%;
-  height: 400px;
-  margin-top: 20px;
-}
+/* Header styling */
 .dashboard-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px; /* Space before the next section */
+  margin-bottom: 20px;
+}
+
+/* Score section styling */
+.score-section {
+  background-color: #4CAF50;
+  border-radius: 50px;
+  padding: 15px 20px;
+  display: inline-block;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.badges-section {
+  display: flex;
+  flex-wrap: wrap; /* Allows badges to wrap to the next line if there's not enough space */
+  justify-content: space-around; /* Evenly spaces badges within the container */
+}
+
+.badge {
+  background-color: #333; /* A darker background for the badge */
+  color: #fff;
+  padding: 20px;
+  margin-bottom: 10px; /* Space between badges */
+  border-radius: 10px; /* Rounded corners for the badge */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Slight shadow for depth */
+  width: 200px; /* Fixed width for badges */
+  text-align: center; /* Centers the text within the badge */
+}
+
+.score-value {
+  color: #ffffff;
+  margin-left: 10px;
+}
+
+.top-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* New container for the right side, which wraps metrics and stats */
+.metrics-and-stats {
+  display: flex;
+  flex-direction: column;
+  width: 48%; /* Matches the width of the left side */
+}
+
+/* Ensure trip-stats only controls the left side */
+.trip-stats {
+  width: 50%;
+}
+
+/* The individual sections no longer need width control, they fill their container */
+.trip-data, .metric, .my-stats {
+  background-color: #262626;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 10px; /* Adds space between elements */
+}
+
+
+/* Footer styling */
+.dashboard-footer {
+  text-align: center;
+  margin-top: 20px; /* Space from the summary stats */
+}
+
+.dashboard-footer button {
+  background-color: #4CAF50;
+  color: #ffffff;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s;
+}
+
+.dashboard-footer button:hover {
+  background-color: #367c39;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+  .top-content, .metrics-and-stats {
+    flex-direction: column;
+    width: 100%; /* Each section takes full width on smaller screens */
+  }
+
+  .badges-section {
+    justify-content: center;
+  }
+  .badge {
+    margin: 10px; /* Less space between badges on smaller screens */
+  }
+
+  .trip-stats {
+    margin-bottom: 15px; /* Adds space between the trip stats and metrics/stats on small screens */
+  }
 }
 
 .score-section {
@@ -30,74 +127,20 @@
   display: inline-block;
   font-weight: bold; /* If other headers are bold */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.score-value {
-  color: #ffffff;
-  margin-left: 10px;
-}
-
-.stats-summary {
-  background-color: #262626; /* Slightly lighter than the main bg for contrast */
-  border-radius: 8px;
-  padding: 25px;
-  margin-bottom: 50px; /* Space before the next section */
-}
-
-.metrics-table {
-  width: 200%;
-  max-width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 50px; /* Space before the next section */
-}
-
-.metrics-table td, 
-.metrics-table th {
-  border: 1px solid #ffffff; /* or a softer color for less contrast */
-  padding: 17px;
   text-align: center;
 }
 
-/* You may need to adjust your media queries for responsive design */
-@media (max-width: 768px) {
-  .top-content {
-    flex-direction: column;
-  }
+
+
+.metrics-stats {
+  order: 1; /* Metrics appear first */
 }
 
-.metrics-table th {
-  background-color: #333333; /* Or your theme's header color */
+.my-stats {
+  order: 2; /* "My Stats" section appears second */
+  margin-bottom: 20px; /* Optional: Adds some space between this section and any following content */
 }
 
-.dashboard-footer {
-  text-align: center;
-}
-
-.dashboard-footer button {
-  background-color: #4CAF50; /* Or your theme's primary button color */
-  color: #ffffff;
-  border: none;
-  border-radius: 25px; /* Rounded button */
-  padding: 10px 20px;
-  font-size: 1em;
-  cursor: pointer;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s;
-}
-
-.dashboard-footer button:hover {
-  background-color: #367c39; /* Darken on hover */
-}
-
-.top-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-
-.stats-table {
-  flex: 1;
-  /* Adjust the max-width to fit the content, and add padding if needed */
-  max-width: 2000px; /* Adjust as needed */
-  max-height: 1000px;
+.actions {
+  order: 3; /* The actions/buttons section appears last */
 }
