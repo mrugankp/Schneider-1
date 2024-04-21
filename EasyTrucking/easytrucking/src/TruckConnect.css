@@ -24,7 +24,7 @@
 .button-container {
   display: flex;
   justify-content: center;
-  gap: 20px; /* Add space between buttons */
+  gap: 100px; /* Add space between buttons */
   margin-bottom: 20px; /* Space below the button container */
 }
 
@@ -33,8 +33,9 @@
   color: white;
   border: none;
   border-radius: 50%; /* Makes the button circular */
-  width: 100px; /* Circle size */
-  height: 100px; /* Circle size */
+  padding: 10px 20px; /* Added padding for text */
+  min-width: 140px; /* Minimum width to accommodate longer text */
+  height: 150px; /* Adjust height automatically */
   display: flex;
   align-items: center;
   justify-content: center;
