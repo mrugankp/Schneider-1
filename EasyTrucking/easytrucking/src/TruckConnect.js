@@ -66,9 +66,16 @@ const TruckConnect = () => {
           Maintenance Videos
         </button>
       </div>
-      
       <div className="time-display">
         <h1><b>Time: {formattedTime}</b></h1>
+      <div className="stats-container">
+        <div className="time-display">
+          <h1><b>Time: {formattedTime}</b></h1>
+        </div>
+
+        <div className="stat">
+          Speed: <div className="speed-indicator" style={{ width: 100, backgroundColor: getSpeedBarColor(speed),}}>{speed}mph
+        </div>
       </div>
 
       <div className='stat-container'>
