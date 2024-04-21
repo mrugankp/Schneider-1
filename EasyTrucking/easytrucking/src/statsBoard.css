@@ -33,7 +33,6 @@
 .badges-section {
   display: flex;
   flex-wrap: wrap; /* Allows badges to wrap to the next line if there's not enough space */
-  justify-content: space-around; /* Evenly spaces badges within the container */
 }
 
 .badge {

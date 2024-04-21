@@ -244,9 +244,9 @@ const StatsBoard = () => {
   return (
     <div className="stats-dashboard">
       <div className="encouraging-message">
-        <h2>{improvementMessage}</h2>
+        <h1><center>{improvementMessage}</center></h1>
       </div>
-      <div className="score-section">Overall Score: 92%</div>
+      <div className="score-section"><h2>Overall Score: 92%</h2></div>
       <div className="top-content">
         <div className="trip-stats">
           <h1>Performance Statistics Over Five Trips</h1>
@@ -275,6 +275,7 @@ const StatsBoard = () => {
 
       <div className="badges-section">
         <h1>Badges for your performance!</h1>
+        
         {badges.map((badge) => (
           <div key={badge.id} className="badge">
             <h3>{badge.label}</h3>

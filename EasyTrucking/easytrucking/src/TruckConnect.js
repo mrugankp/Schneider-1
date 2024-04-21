@@ -125,7 +125,7 @@ const TruckConnect = () => {
           <div className='indiv-stat-container'>
             <div className="stat-label"><b>Speed:</b></div>
             <div className="speed-indicator" style={{ backgroundColor: getSpeedBarColor(speed) }}>
-              <span className="stat-value">{speed}km/h</span>
+              <span className="stat-value">{(speed* 0.621371).toFixed(2)}mph</span>
             </div>
           </div>
 
