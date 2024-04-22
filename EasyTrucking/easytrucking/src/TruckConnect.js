@@ -15,9 +15,6 @@ const TruckConnect = () => {
   const totalTime = totalKilometers ? ((totalKilometers / 60)*60).toFixed(2)  : null;
   console.log(totalKilometers)
 
-  
-
-
   const handleDisableDrivingMode = () => {
     navigate('/communications'); 
   };
@@ -98,6 +95,9 @@ const TruckConnect = () => {
   }, []);
 
   const formattedTime = currentTime.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
+  const currentHour = currentTime.toLocaleTimeString([], { hour: 'numeric'})
+  const nextHourOne = currentTime.toLocaleTimeString([], { hour: 'numeric', timeZone: 'America/New_York'})
+  const nextHourTwo = currentTime.toLocaleTimeString([], { hour: 'numeric', timeZone: 'America/Punta_Arenas'})
 
   return (
     <div className="dashboard-container">
@@ -141,7 +141,7 @@ const TruckConnect = () => {
 
           <div className='indiv-stat-container'>
             <div className="stat-label"><b>Suggested Break:</b></div>
-            <div className="stat-value"><b>12:00 PM</b></div>
+            <div className="stat-value"><b>{nextHourOne}</b></div>
           </div>
         </div>
       </div>
@@ -155,10 +155,9 @@ const TruckConnect = () => {
         <div className="timeline-segment NA">Current</div>
       </div>
       <div className="timeline-labels">
-        <span className="timeline-label middle">{Number((currentTime.toLocaleTimeString([], { hour: 'numeric'}))[0])-2} PM</span>
-        <span className="timeline-label end">{Number((currentTime.toLocaleTimeString([], { hour: 'numeric'}))[0])-1} PM</span>
-        <span className="timeline-label start">{currentTime.toLocaleTimeString([], { hour: 'numeric'})}</span>
-
+        <span className="timeline-label middle">{currentHour}</span>
+        <span className="timeline-label end">{nextHourOne}</span>
+        <span className="timeline-label start">{nextHourTwo}</span>
       </div>
     </div>
     </div>
