@@ -12,7 +12,11 @@ const TruckConnect = () => {
   const dataPassed = location.state?.totalMiles;
   // converts miles to kilometers
   const totalKilometers = dataPassed ? (dataPassed * 1.60934).toFixed(2) : null;
-  const totalTime = totalKilometers ? ((totalKilometers / 60)*60).toFixed(2)  : null;
+  let totalTime = totalKilometers ? totalKilometers / 60 : null; // totalTime in hours as a decimal
+  let hours = totalTime ? Math.floor(totalTime) : null; // Extracting the whole hours
+  let minutes = totalTime ? Math.floor((totalTime - hours) * 60) : null; // Converting the decimal part to minutes
+
+console.log(hours + " hours and " + minutes + " minutes");
   console.log(totalKilometers)
 
   const handleDisableDrivingMode = () => {
@@ -95,6 +99,11 @@ const TruckConnect = () => {
   }, []);
 
   const formattedTime = currentTime.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
+  const formattedDate = currentTime.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit'
+  });
   const currentHour = currentTime.toLocaleTimeString([], { hour: 'numeric'})
   const nextHourOne = currentTime.toLocaleTimeString([], { hour: 'numeric', timeZone: 'America/New_York'})
   const nextHourTwo = currentTime.toLocaleTimeString([], { hour: 'numeric', timeZone: 'America/Punta_Arenas'})
@@ -117,7 +126,7 @@ const TruckConnect = () => {
       </div>
       
       <div className="time-display">
-        <h1><b>Time: {formattedTime}</b></h1>
+        <h1><b>Date: {formattedDate} | Time: {formattedTime}</b></h1>
       </div>
 
       <div className='stat-container'>
@@ -136,12 +145,12 @@ const TruckConnect = () => {
 
           <div className='indiv-stat-container'>
             <div className="stat-label"><b>Total Time:</b></div>
-            <div className="stat-value"><b>{totalTime} mins (Driving)</b></div>
+            <div className="stat-value"><b>{hours} hours {minutes} minutes (Driving)</b></div>
           </div>
 
           <div className='indiv-stat-container'>
             <div className="stat-label"><b>Suggested Break:</b></div>
-            <div className="stat-value"><b>{nextHourOne}</b></div>
+            <div className="stat-value"><b>18:30 hrs</b></div>
           </div>
         </div>
       </div>

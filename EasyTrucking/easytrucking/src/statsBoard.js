@@ -290,7 +290,7 @@ const StatsBoard = () => {
       </div>
       </div>
       <div className="actions">
-        <button onClick={handleBackToTruckConnect} className="go-back-button">Go Back to Truck Connect</button>
+        <button onClick={handleBackToTruckConnect} className="total-distance">Go Back to Truck Connect</button>
         
       </div>
     </div>

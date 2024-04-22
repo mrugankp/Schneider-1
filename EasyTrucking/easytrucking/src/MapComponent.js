@@ -20,7 +20,7 @@ const handleBackToTruckConnect = () => {
   if (totalDistance != null) { // Make sure totalDistance is not null
     navigate('/truckconnect', { state: { totalMiles: totalDistance } });
   } else if(totalDistance == null){
-    navigate('/truckconnect', { state: { totalMiles: totalDistance*0} });
+    navigate('/truckconnect', { state: { totalMiles: totalDistance} });
   }else {
     // Handle the case where totalDistance has not been set yet
     console.log("Total distance is not available.");
