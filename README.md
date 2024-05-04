@@ -46,7 +46,9 @@ The back-end is built with Node.js, Express.js, and uses Sequelize ORM for datab
 
 - User authentication (signup and login).
 - Interactive maps with real-time navigation.
-- Dynamic stat tracking on the dashboard.
+- Dynamic stat tracking on the dashboard (i.e. distance and time to destination along with live GPS tracker)
+- Interactive training modules page
+- Communications platform for calling/texting
 
 ### Limitations
 
